@@ -1,0 +1,51 @@
+---
+title: "Summative_main"
+author: "Kun_Guo"
+date: "2023-03-07"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+data=read.csv("bank_personal_loan.csv")
+data
+```
+
+
+```{r}
+install.packages("VIM")
+library("VIM")
+aggr(data,prop=FALSE,numbers=TRUE)  # check missing values
+summary(data)
+```
+```{r}
+data$ZIP.Code<-factor(data$ZIP.Code)
+data$Family<-factor(data$Family)
+data$Education<-factor(data$Education)
+data$Securities.Account<-factor(data$Securities.Account)
+data$CD.Account<-factor(data$CD.Account)
+data$Online<-factor(data$Online)
+data$CreditCard<-factor(data$CreditCard)
+data$Personal.Loan<-factor(data$Personal.Loan)
+data
+```
+
+
+```{r}
+install.packages("randomForest")
+library("randomForest")
+set.seed(100)
+rf_train<-randomForest(data$Personal.Loan~.,data=data,mtry=12,ntree=1000)
+plot(rf_train)    #绘制模型误差与决策树数量关系图  
+legend(800,0.02,"Personal.Loan=0",cex=0.9,bty="n")    
+legend(800,0.0245,"total",cex=0.09,bty="n")  
+```

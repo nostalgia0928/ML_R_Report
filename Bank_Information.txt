@@ -1,0 +1,13 @@
+Personal Loan: customer accepted a personal load offered (1=Yes, 0=No)
+Age: customer age
+Experience: professional experience (years)
+Income: annual income ($000)
+Zip code: zip code for home address
+Family: size of family
+CCAvg: average credit cards spending per month ($000)
+Education: most recent educational achievement level (1) undergraduate, (2) graduate, (3) advanced/professional
+Mortgage: value of mortgage on home ($000)
+Securities: do they have a securities account with this bank? (1=Yes, 0=No)
+CDAccount: do they have a certificate of deposit with this bank? (1=Yes, 0=No)
+Online: do they use Internet banking (1=Yes, 0=No)
+CreditCard: do they use a credit card from this bank? (1=Yes, 0=No)

@@ -1,0 +1,5 @@
+"0","rf_train<-randomForest(data$Personal.Loan~.,data=data,mtry=12,ntree=1000)
+"
+"2","Error in randomForest.default(m, y, ...) : 
+  Can not handle categorical predictors with more than 53 categories.
+"
